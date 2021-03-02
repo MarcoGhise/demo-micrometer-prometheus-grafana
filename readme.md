@@ -29,3 +29,6 @@ After all services have started successfully, you can navigate to the following 
 - Prometheus      - http://localhost:9090/
 - Grafana         - http://localhost:3000/
 
+
+https://dzone.com/articles/monitoring-spring-boot-applications-with-prometheu?edition=654391&utm_medium=email&utm_source=dzone&utm_content=Face%20Recognition%20with%20Java&utm_campaign=
+https://github.com/mjstewart/fakesmtp-web
