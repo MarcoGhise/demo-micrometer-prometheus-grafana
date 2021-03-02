@@ -29,6 +29,15 @@ After all services have started successfully, you can navigate to the following 
 - Prometheus      - http://localhost:9090/
 - Grafana         - http://localhost:3000/
 
+## Update
+In this Fork I added/updated these features:
 
-https://dzone.com/articles/monitoring-spring-boot-applications-with-prometheu?edition=654391&utm_medium=email&utm_source=dzone&utm_content=Face%20Recognition%20with%20Java&utm_campaign=
-https://github.com/mjstewart/fakesmtp-web
+- Updated Grafana to 7.4.3;
+- Added Fake-smtp docker image: Server for sending email.
+- Added Fake-smtp-web docker image: Web console for checking the email.yaml
+- Created a new Grafana Dashboard;
+- Added snuids-trafficlights-panel plugin;
+- Added log messages to monitoring-demo app;
+- Created a new instance of monitoring-demo called node2; 
+- Added order.purchase metric;
+- Added notification alerts inside Grafana.               
