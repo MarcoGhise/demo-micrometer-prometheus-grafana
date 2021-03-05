@@ -126,10 +126,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 5
+        "h": 5,
+        "w": 8,
+        "x": 15,
+        "y": 0
       },
       "hiddenSeries": false,
       "id": 21,
@@ -204,6 +204,223 @@
         },
         {
           "$$hashKey": "object:1467",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                1.5
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "B",
+                "1m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "max"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "keep_state",
+        "for": "5m",
+        "frequency": "1m",
+        "handler": 1,
+        "name": "Log Counter - Node2 alert",
+        "noDataState": "no_data",
+        "notifications": []
+      },
+      "aliasColors": {
+        "debug": "dark-blue",
+        "error": "dark-red",
+        "info": "dark-green",
+        "warn": "yellow"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "unit": "none"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{instance=\"monitoring-demo-node2:8080\", job=\"monitoring-demo\", level=\"debug\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "debug"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{instance=\"monitoring-demo-node2:8080\", job=\"monitoring-demo\", level=\"error\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "error"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{instance=\"monitoring-demo-node2:8080\", job=\"monitoring-demo\", level=\"info\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "info"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{instance=\"monitoring-demo-node2:8080\", job=\"monitoring-demo\", level=\"trace\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "trace"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{instance=\"monitoring-demo-node2:8080\", job=\"monitoring-demo\", level=\"warn\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "warn"
+              }
+            ]
+          }
+        ]
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 5
+      },
+      "hiddenSeries": false,
+      "id": 22,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.4.3",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "increase(logback_events_total{instance=\"monitoring-demo-node2:8080\"}[1m])",
+          "format": "time_series",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "expr": "increase(logback_events_total{instance=\"monitoring-demo-node2:8080\", level=\"error\"}[1m])",
+          "format": "time_series",
+          "hide": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 1.5,
+          "visible": true
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Log Counter - Node2",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1414",
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1415",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -339,10 +556,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 13
+        "h": 7,
+        "w": 11,
+        "x": 12,
+        "y": 5
       },
       "hiddenSeries": false,
       "id": 19,
@@ -441,223 +658,6 @@
       }
     },
     {
-      "alert": {
-        "alertRuleTags": {},
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [
-                1.5
-              ],
-              "type": "gt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": [
-                "B",
-                "1m",
-                "now"
-              ]
-            },
-            "reducer": {
-              "params": [],
-              "type": "max"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "keep_state",
-        "for": "5m",
-        "frequency": "1m",
-        "handler": 1,
-        "name": "Log Counter - Node2 alert",
-        "noDataState": "no_data",
-        "notifications": []
-      },
-      "aliasColors": {
-        "debug": "dark-blue",
-        "error": "dark-red",
-        "info": "dark-green",
-        "warn": "yellow"
-      },
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "unit": "none"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "{instance=\"monitoring-demo-node2:8080\", job=\"monitoring-demo\", level=\"debug\"}"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "debug"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "{instance=\"monitoring-demo-node2:8080\", job=\"monitoring-demo\", level=\"error\"}"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "error"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "{instance=\"monitoring-demo-node2:8080\", job=\"monitoring-demo\", level=\"info\"}"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "info"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "{instance=\"monitoring-demo-node2:8080\", job=\"monitoring-demo\", level=\"trace\"}"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "trace"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "{instance=\"monitoring-demo-node2:8080\", job=\"monitoring-demo\", level=\"warn\"}"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "warn"
-              }
-            ]
-          }
-        ]
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 13
-      },
-      "hiddenSeries": false,
-      "id": 22,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.4.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "increase(logback_events_total{instance=\"monitoring-demo-node2:8080\"}[1m])",
-          "format": "time_series",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        },
-        {
-          "expr": "increase(logback_events_total{instance=\"monitoring-demo-node2:8080\", level=\"error\"}[1m])",
-          "format": "time_series",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "gt",
-          "value": 1.5,
-          "visible": true
-        }
-      ],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Log Counter - Node2",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:1414",
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:1415",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -679,9 +679,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 11,
+        "w": 12,
         "x": 0,
-        "y": 21
+        "y": 12
       },
       "hiddenSeries": false,
       "id": 12,
@@ -794,9 +794,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 10,
-        "x": 11,
-        "y": 21
+        "w": 11,
+        "x": 12,
+        "y": 12
       },
       "hiddenSeries": false,
       "id": 13,
@@ -919,9 +919,9 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 11,
+        "w": 12,
         "x": 0,
-        "y": 29
+        "y": 20
       },
       "id": 15,
       "options": {
@@ -980,9 +980,9 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 10,
-        "x": 11,
-        "y": 29
+        "w": 11,
+        "x": 12,
+        "y": 20
       },
       "id": 8,
       "options": {
@@ -1034,7 +1034,7 @@
         "h": 8,
         "w": 21,
         "x": 0,
-        "y": 34
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 10,
@@ -1130,7 +1130,7 @@
         "h": 4,
         "w": 2,
         "x": 0,
-        "y": 42
+        "y": 33
       },
       "id": 17,
       "options": {
@@ -1168,7 +1168,7 @@
         "h": 4,
         "w": 6,
         "x": 2,
-        "y": 42
+        "y": 33
       },
       "id": 6,
       "options": {
@@ -1230,7 +1230,7 @@
         "h": 4,
         "w": 6,
         "x": 8,
-        "y": 42
+        "y": 33
       },
       "id": 4,
       "options": {
@@ -1287,7 +1287,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 46
+        "y": 37
       },
       "hiddenSeries": false,
       "id": 2,
@@ -1380,8 +1380,8 @@
     "list": []
   },
   "time": {
-    "from": "now-5m",
-    "to": "now"
+    "from": "2021-03-03T12:35:08.589Z",
+    "to": "2021-03-03T12:55:08.589Z"
   },
   "timepicker": {},
   "timezone": "",

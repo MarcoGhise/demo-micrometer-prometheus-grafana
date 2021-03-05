@@ -51,7 +51,7 @@ public class HelloWorldController {
 		case 10:
 			helloWorld.setText("You've got an order");
 			log.info("You've got an order", helloWorld);
-			orderService.OrderPurchase();
+			orderService.orderPurchase();
 			break;
 
 		}

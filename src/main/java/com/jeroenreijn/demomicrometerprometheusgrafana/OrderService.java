@@ -10,7 +10,7 @@ public class OrderService {
 
 	private MeterRegistry meterRegistry;
 
-	private Counter lightOrderCounter;
+	private Counter orderCounter;
 
 	public OrderService(MeterRegistry meterRegistry) {
 		this.meterRegistry = meterRegistry;
@@ -18,11 +18,11 @@ public class OrderService {
 	}
 
 	private void initOrderCounters() {
-		lightOrderCounter = this.meterRegistry.counter("order.purchase"); // 1 - create a counter
+		orderCounter = this.meterRegistry.counter("order.purchase"); // 1 - create a counter
 	}
 
-	public void OrderPurchase() {
-		lightOrderCounter.increment(1.0); // 3 - increment the counters
+	public void orderPurchase() {
+		orderCounter.increment(1.0); // 3 - increment the counters
 	}
 
 }
